@@ -16,32 +16,16 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Assign
-        - Transfer
+        
         - PunkTransfer
-        - PunkOffered
-        - PunkBidEntered
-        - PunkBidWithdrawn
-        - PunkBought
-        - PunkNoLongerForSale
+       
       abis:
         - name: punk
           file: ./abis/punk.json
       eventHandlers:
-        - event: Assign(indexed address,uint256)
-          handler: handleAssign
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
+        
+       
         - event: PunkTransfer(indexed address,indexed address,uint256)
           handler: handlePunkTransfer
-        - event: PunkOffered(indexed uint256,uint256,indexed address)
-          handler: handlePunkOffered
-        - event: PunkBidEntered(indexed uint256,uint256,indexed address)
-          handler: handlePunkBidEntered
-        - event: PunkBidWithdrawn(indexed uint256,uint256,indexed address)
-          handler: handlePunkBidWithdrawn
-        - event: PunkBought(indexed uint256,uint256,indexed address,indexed address)
-          handler: handlePunkBought
-        - event: PunkNoLongerForSale(indexed uint256)
-          handler: handlePunkNoLongerForSale
+        
       file: ./src/punk.ts
